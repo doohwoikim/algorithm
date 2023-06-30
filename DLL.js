@@ -168,10 +168,46 @@ class DoublyLinkedList {
         this.length++;
         return true;
     }
+
+    //     If the index is less than zero or greater than or equal to the length return undefined
+    // If the index is 0, shift
+    // If the index is the same as the length-1, pop
+    // Use the get method to retrieve the item to be removed
+    // Update the next and prev properties to remove the found node from the list
+    // Set next and prev to null on the found node
+    // Decrement the length
+    // Return the removed node.
+    remove(index) {
+        if (index < 0 || index >= this.length) return undefined;
+        if (index === 0) return this.shift();
+        if (index === this.length - 1) return this.pop();
+
+        var removeNode = this.get(index);
+        var beforeNode = removeNode.prev;
+        var afterNode = removeNode.next;
+
+        beforeNode.next = afterNode;
+        afterNode.prev = beforeNode.next;
+
+        removeNode.next = null;
+        removeNode.prev = null;
+        this.length--;
+        return removeNode;
+    }
+
+    print() {
+        var arr = [];
+        var current = this.head
+        while (current) {
+            arr.push(current.val)
+            current = current.next
+        }
+        console.log(arr);
+    }
 }
 
 var list = new DoublyLinkedList()
 list.push("Harry")
 list.push("Ron")
 list.push("Hermione")
-console.log(list)
+list.print()
