@@ -73,7 +73,6 @@ class Graph {
             currentVertex = queue.shift();
             result.push(currentVertex);
 
-
             this.adjacencyList[currentVertex].forEach(neighbor => {
                 if (!visited[neighbor]) {
                     visited[neighbor] = true;
@@ -105,6 +104,10 @@ g.addEdge("D", "E")
 g.addEdge("D", "F")
 g.addEdge("E", "F")
 
+console.log(g.depthFirstRecursive("A"))
+console.log(g.depthFirstIterative("A"))
+console.log(g.breadthFirst("B"))
+console.log(g)
 //          A
 //        /   \
 //       B     C
