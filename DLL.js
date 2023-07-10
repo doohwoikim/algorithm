@@ -206,7 +206,7 @@ class DoublyLinkedList {
     }
 }
 
-var list = new DoublyLinkedList()
+var list = new DoublyLinkedList()  
 list.push("Harry")
 list.push("Ron")
 list.push("Hermione")
