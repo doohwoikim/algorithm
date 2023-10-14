@@ -82,3 +82,86 @@ function 만들함수(x: { subject: string | string[] }) {
 }
 
 console.log(만들함수({ subject: ['english', 'art'] }))
+
+type MyType = {
+  color?: string,
+  size: number,
+  readonly position: number[]
+}
+
+let 테스트용변수: MyType = {
+  size: 123,
+  position: [1, 2, 3]
+}
+
+type User = { name: string, email?: string, phone: number }
+type Adult = { adult: boolean }
+
+type NewUser = User & Adult;
+
+let 회원가입정보: NewUser = {
+  name: 'kim',
+  adult: false,
+  phone: 1234
+}
+
+function rock(a: '가위' | '바위' | '보'): ('가위' | '바위' | '보')[] {
+  return ['가위', '보']
+}
+
+var 자료 = {
+  name: 'kim'
+} as const;
+
+function 내함수(a: 'kim') {
+
+}
+내함수(자료.name)
+
+let 회원정보 = {
+  name: 'kim',
+  age: 30,
+  plusOne(x) {
+    return x + 1
+  },
+  changeName: () => {
+    console.log('안녕')
+  }
+}
+회원정보.plusOne(1);
+회원정보.changeName();
+
+type Member = {
+  name: string,
+  age: number,
+  plusOne: (x: number) => number,
+  changeName: () => void
+}
+
+type CutType = (x: string) => string
+
+let cutZero: CutType = function (x) {
+  let result = x.replace(/^0+/, "");
+  return result
+}
+function removeDash(x: string): number {
+  let result = x.replace(/-/g, "");
+  return parseFloat(result)
+}
+
+function 만들함수1(a, func1, func2) {
+  let result = func1(a);
+  let result2 = func2(result);
+  console.log(result2)
+}
+만들함수1('010-1111-2222', cutZero, removeDash)  //1011112222 출력잘됨
+
+type 함수타입1 = (a: string) => string;
+type 함수타입2 = (a: string) => number;
+
+function 만들함수2(a: string, func1: 함수타입1, func2: 함수타입2) {
+  let result = func1(a);
+  let result2 = func2(result);
+  console.log(result2)
+}
+만들함수2('010-1111-2222', cutZero, removeDash)  //1011112222 출력잘됨
