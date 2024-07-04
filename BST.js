@@ -4,7 +4,7 @@ class Node {
         this.left = null;
         this.right = null;
     } 
-}
+}asdawd
 
 class BinarySearchTree {
     constructor() {
