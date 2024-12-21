@@ -161,6 +161,7 @@ class BinarySearchTree {
 // 2  7  11  16
 
 var tree = new BinarySearchTree();
+tree.print()
 tree.insert(10)
 tree.insert(5)
 tree.insert(13)
@@ -173,3 +174,4 @@ tree.BFS()
 tree.DFSPreOrder();
 tree.DFSPostOrder();
 tree.DFSInOrder();
+tree.print()
