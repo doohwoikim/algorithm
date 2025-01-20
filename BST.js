@@ -3,8 +3,8 @@ class Node {
         this.value = value;
         this.left = null;
         this.right = null;
-    }        
-}   
+    }
+}
 
 class BinarySearchTree {
     constructor() {
@@ -174,4 +174,5 @@ tree.BFS()
 tree.DFSPreOrder();
 tree.DFSPostOrder();
 tree.DFSInOrder();
+tree.print()
 tree.print()
