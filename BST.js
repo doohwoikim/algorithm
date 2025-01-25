@@ -3,15 +3,15 @@ class Node {
         this.value = value;
         this.left = null;
         this.right = null;
-    } 
-}  
+    }
+}
 
 class BinarySearchTree {
     constructor() {
         this.root = null;
     }
 
-    //     Create a new node
+    //  Create a new node
     // Starting at the root
     // Check if there is a root, if not - the root now becomes that new node!
     // If there is a root, check if the value of the new node is greater than or less than the value of the root
